@@ -1,9 +1,45 @@
 <section class="page-header">
   <h1>David Colucci</h1>
-  <div class="page-header__box"></div>
+  <canvas width="800px" height="800px" id="page-header__canvas"></canvas>
   <aside class="page-header__social"></aside>
   <nav class="page-header__nav">
     <a href="/about">About me</a>
     <a href="/experience">Experience</a>
   </nav>
 </section>
+
+<script>
+  const CANVAS_BORDER_WIDTH = 18;
+
+  const canvas = document.getElementById('page-header__canvas');
+  const ctx = canvas.getContext('2d');
+
+  let lastX;
+  let lastY;
+  let offsetLeft;
+  let offsetTop;
+
+  function onMouseEnterOrLeave(event) {
+    const x = event.layerX - canvas.offsetLeft + CANVAS_BORDER_WIDTH;
+    const y = event.layerY - canvas.offsetTop + CANVAS_BORDER_WIDTH;
+  }
+
+  function draw(event) {
+    const x = event.layerX - canvas.offsetLeft - CANVAS_BORDER_WIDTH;
+    const y = event.layerY - canvas.offsetTop - CANVAS_BORDER_WIDTH;
+    ctx.beginPath();
+
+    if (lastX && lastY) {
+      ctx.moveTo(lastX, lastY);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    }
+
+    lastX = x;
+    lastY = y;
+  }
+
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseenter', onMouseEnterOrLeave);
+  canvas.addEventListener('mouseleave', onMouseEnterOrLeave);
+</script>
