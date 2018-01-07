@@ -16,30 +16,48 @@
 
   let lastX;
   let lastY;
-  let offsetLeft;
-  let offsetTop;
+  let lastLastX;
+  let lastLastY;
 
-  function onMouseEnterOrLeave(event) {
-    const x = event.layerX - canvas.offsetLeft + CANVAS_BORDER_WIDTH;
-    const y = event.layerY - canvas.offsetTop + CANVAS_BORDER_WIDTH;
+  function drawPath(x1, y1, x2, y2) {
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
   }
 
-  function draw(event) {
+  function onMouseEnter(event) {
+    lastX = event.layerX - canvas.offsetLeft - CANVAS_BORDER_WIDTH;
+    lastY = event.layerY - canvas.offsetTop - CANVAS_BORDER_WIDTH;
+  }
+
+  function onMouseLeave(event) {
     const x = event.layerX - canvas.offsetLeft - CANVAS_BORDER_WIDTH;
     const y = event.layerY - canvas.offsetTop - CANVAS_BORDER_WIDTH;
-    ctx.beginPath();
+
+    drawPath(lastX, lastY, x, y);
+
+    lastX = null;
+    lastY = null;
+    lastLastX = null;
+    lastLastY = null;
+  }
+
+  function onMouseMove(event) {
+    const x = event.layerX - canvas.offsetLeft - CANVAS_BORDER_WIDTH;
+    const y = event.layerY - canvas.offsetTop - CANVAS_BORDER_WIDTH;
 
     if (lastX && lastY) {
-      ctx.moveTo(lastX, lastY);
-      ctx.lineTo(x, y);
-      ctx.stroke();
+      drawPath(lastX, lastY, x, y);
     }
 
+    lastLastX = lastX;
+    lastLastY = lastY;
     lastX = x;
     lastY = y;
   }
 
-  canvas.addEventListener('mousemove', draw);
-  canvas.addEventListener('mouseenter', onMouseEnterOrLeave);
-  canvas.addEventListener('mouseleave', onMouseEnterOrLeave);
+  canvas.addEventListener('mousemove', onMouseMove);
+  canvas.addEventListener('mouseenter', onMouseEnter);
+  canvas.addEventListener('mouseleave', onMouseLeave);
 </script>
