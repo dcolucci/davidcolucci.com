@@ -2,14 +2,14 @@
 
 Built on [Refinery CMS](https://github.com/refinery/refinerycms).
 
-### Local Development
+## Local Development
 
 Requires:
  * PostgreSQL v10
  * Rails v5
  * Ruby v2.4
 
-#### Setup
+### Setup
 
  1. Make sure you're running the right ruby version
 
