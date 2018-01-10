@@ -16,14 +16,14 @@
 
 <script>
   const CANVAS_BORDER_WIDTH = 18;
+  const CANVAS_SIZE = 800;
 
   const canvas = document.getElementById('page-header__canvas');
   const ctx = canvas.getContext('2d');
 
+  let shouldDrawBacktrace = false;
   let lastX;
   let lastY;
-  let lastLastX;
-  let lastLastY;
 
   function drawPath(x1, y1, x2, y2) {
     ctx.beginPath();
@@ -32,9 +32,37 @@
     ctx.stroke();
   }
 
+  function drawBacktrace(x1, y1, x2, y2) {
+    // calculate vector between (x1, y1) and (x2, y2)
+    // find a point outside of canvas (x3, y3) on that trajectory
+    // draw path from (x2, y2) to (x3, y3)
+
+    const xDiff = x2 - x1;
+    const yDiff = y2 - y1;
+    const xDiffAbs = Math.abs(xDiff);
+    const yDiffAbs = Math.abs(yDiff);
+
+    // use smaller dimension as demoninator to ensure we go off canvas
+    const slopeDenom = xDiffAbs - yDiffAbs >= 0 ? yDiffAbs : xDiffAbs;
+
+    // find the factor by which to multiply x and y dimensions
+    const slopeFactor = Math.floor(CANVAS_SIZE / slopeDenom) + 1
+
+    const thetaX = x1 - slopeFactor * xDiff;
+    const thetaY = x2 - slopeFactor * yDiff;
+
+    drawPath(x1, y1, thetaX, thetaY);
+
+    console.log('BACKTRACE');
+    console.log('1: ', x1, ',', y1);
+    console.log('2: ', x2, ',', y2);
+    console.log('theta: ', thetaX, ',', thetaY);
+  }
+
   function onMouseEnter(event) {
     lastX = event.layerX - canvas.offsetLeft - CANVAS_BORDER_WIDTH;
     lastY = event.layerY - canvas.offsetTop - CANVAS_BORDER_WIDTH;
+    shouldDrawBacktrace = true;
   }
 
   function onMouseLeave(event) {
@@ -45,8 +73,6 @@
 
     lastX = null;
     lastY = null;
-    lastLastX = null;
-    lastLastY = null;
   }
 
   function onMouseMove(event) {
@@ -57,8 +83,11 @@
       drawPath(lastX, lastY, x, y);
     }
 
-    lastLastX = lastX;
-    lastLastY = lastY;
+    if (shouldDrawBacktrace) {
+      drawBacktrace(lastX, lastY, x, y);
+      shouldDrawBacktrace = false;
+    }
+
     lastX = x;
     lastY = y;
   }
