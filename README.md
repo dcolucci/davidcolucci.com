@@ -44,6 +44,12 @@ Requires:
     pg_ctl start -D /usr/local/var/postgres
     ```
 
+ 1. Install dependencies
+
+    ```sh
+    bundle install
+    ```
+
  1. Start the rails app server
 
     ```sh
