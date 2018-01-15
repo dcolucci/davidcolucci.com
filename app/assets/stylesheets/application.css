@@ -15,3 +15,10 @@
  *= require refinery/theme
  *= require_self
  */
+
+/*
+ * refinery CMS adds this toolbar to the page in dev
+ */
+#site_bar {
+  display: none;
+}
