@@ -50,7 +50,9 @@
    * 2) take the smallest nonzero value of the two - thetaBasis
    * 3) divide canvas size by thetaBasis - thetaFactor
    * 4) calculate theta x and y values by multiplying thetaFactor
-   *    by xDiff and yDiff (not abs vals) from original two points
+   *    by xDiff and yDiff (not abs vals) between original two points
+   *    and adding each of those factors to corresponding x and y
+   *    coordinates of (x1, y1)
    * 5) draw path from first point to theta
    *
    * The above procedure ensures that theta will be a point outside
@@ -76,7 +78,7 @@
     // step 4
     // calculate theta x and y values
     const thetaX = x1 - thetaFactor * xDiff;
-    const thetaY = x2 - thetaFactor * yDiff;
+    const thetaY = y1 - thetaFactor * yDiff;
 
     // step 5
     // draw path from first point to theta
