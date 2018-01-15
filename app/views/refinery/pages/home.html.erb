@@ -6,6 +6,12 @@
     <a href="/about">About me</a>
     <a href="/experience">Experience</a>
   </nav>
+  <div class="page-body">
+    <% @blog_posts.each do |post| %>
+      <p><%= post.title %></p>
+      <p><%= post.meta_description %></p>
+    <% end %>
+  </div>
 </section>
 
 <script>
@@ -57,7 +63,8 @@
     lastY = y;
   }
 
-  canvas.addEventListener('mousemove', onMouseMove);
-  canvas.addEventListener('mouseenter', onMouseEnter);
-  canvas.addEventListener('mouseleave', onMouseLeave);
+  // commented these out bc it's getting annoying
+  // canvas.addEventListener('mousemove', onMouseMove);
+  // canvas.addEventListener('mouseenter', onMouseEnter);
+  // canvas.addEventListener('mouseleave', onMouseLeave);
 </script>
