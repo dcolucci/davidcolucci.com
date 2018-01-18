@@ -1,6 +1,12 @@
+<!--
+canvas size calculation:
+container width = 800
+canvas border = 18
+canvas width = 800 - 18 * 2 = 764
+-->
 <section class="page-header">
   <h1>David Colucci</h1>
-  <canvas width="800px" height="800px" id="page-header__canvas"></canvas>
+  <canvas height="764" width="764" id="page-header__canvas"></canvas>
   <aside class="page-header__social"></aside>
   <nav class="page-header__nav">
     <a href="/about">About me</a>
@@ -16,7 +22,7 @@
 
 <script>
   const CANVAS_BORDER_WIDTH = 18;
-  const CANVAS_SIZE = 800;
+  const CANVAS_SIZE = 764;
 
   const canvas = document.getElementById('page-header__canvas');
   const ctx = canvas.getContext('2d');
