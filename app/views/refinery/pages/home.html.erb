@@ -7,7 +7,18 @@ canvas width = 800 - 18 * 2 = 764
 <section class="page-header">
   <h1>David Colucci</h1>
   <canvas height="764" width="764" id="page-header__canvas"></canvas>
-  <aside class="page-header__social"></aside>
+  <aside class="page-header__social">
+    <a href="https://github.com/dcolucci" target="_blank">
+      <%= image_tag('GitHub-Mark-64px.png', size: '32') %>
+    </a>
+    <a href="https://www.linkedin.com/in/david-colucci-26bb7673" target="_blank">
+      <!-- of course linkedin doesn't use a square -->
+      <%= image_tag('In-Black-66px-R.png', width: '32', height: '28') %>
+    </a>
+    <a href="https://www.instagram.com/dac74" target="_blank">
+      <%= image_tag('glyph-logo_May2016', size: '32') %>
+    </a>
+  </aside>
   <nav class="page-header__nav">
     <a href="/about">About me</a>
     <a href="/experience">Experience</a>

@@ -26,6 +26,12 @@ body {
   border: 18px solid #2A2A2A;
 }
 
+.page-header__social {
+  a {
+    display: inline-block;
+  }
+}
+
 .page-header__nav {
   display: flex;
   justify-content: flex-end;
