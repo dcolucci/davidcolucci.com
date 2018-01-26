@@ -16,9 +16,23 @@
  *= require_self
  */
 
+ * {
+   box-sizing: border-box;
+ }
+
 /*
  * refinery CMS adds this toolbar to the page in dev
  */
 #site_bar {
   display: none;
+}
+
+a {
+  color: #9a1109;
+  text-decoration: none;
+  transition: color .2s ease-out;
+}
+
+a:hover {
+  color: #d69f9c;
 }

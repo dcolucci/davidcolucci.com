@@ -4,31 +4,32 @@ container width = 800
 canvas border = 18
 canvas width = 800 - 18 * 2 = 764
 -->
+<h1 class="page-headline">David Colucci</h1>
 <section class="page-header">
-  <h1>David Colucci</h1>
   <canvas height="764" width="764" id="page-header__canvas"></canvas>
   <aside class="page-header__social">
     <a href="https://github.com/dcolucci" target="_blank">
-      <%= image_tag('GitHub-Mark-64px.png', size: '32') %>
+      <%= image_tag('GitHub-Mark-64px.png', size: '32', alt: 'David Colucci GitHub') %>
     </a>
     <a href="https://www.linkedin.com/in/david-colucci-26bb7673" target="_blank">
       <!-- of course linkedin doesn't use a square -->
-      <%= image_tag('In-Black-66px-R.png', width: '32', height: '28') %>
+      <%= image_tag('In-Black-66px-R.png', width: '32', height: '28', alt: 'David Colucci LinkedIn') %>
     </a>
     <a href="https://www.instagram.com/dac74" target="_blank">
-      <%= image_tag('glyph-logo_May2016', size: '32') %>
+      <%= image_tag('glyph-logo_May2016', size: '32', alt: 'David Colucci Instagram') %>
     </a>
   </aside>
   <nav class="page-header__nav">
     <a href="/about">About me</a>
-    <a href="/experience">Experience</a>
+    <span aria-hidden="true">//</span>
+    <a href="https://s3.amazonaws.com/davidcolucci/DavidColucciResume.pdf" target="_blank">Experience</a>
   </nav>
-  <div class="page-body">
-    <% @blog_posts.each do |post| %>
-      <p><%= post.title %></p>
-      <p><%= post.meta_description %></p>
-    <% end %>
-  </div>
+</section>
+<section class="page-body">
+  <% @blog_posts.each do |post| %>
+    <p><%= post.title %></p>
+    <p><%= post.meta_description %></p>
+  <% end %>
 </section>
 
 <script>
