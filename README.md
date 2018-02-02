@@ -23,6 +23,11 @@ Requires:
     # indicate directory where postgres runs
     pg_ctl start -D /usr/local/var/postgres
     ```
+    If the DB server runs from the above directory, you can use this rake task to start it:
+
+    ```sh
+    rake startdb
+    ```
 
  1. Set up the database
 
@@ -38,10 +43,14 @@ Requires:
 
 ### Usage
 
- 1. Start the database server
+ 1. Start the database server using the rake task...
 
     ```sh
-    pg_ctl start -D /usr/local/var/postgres
+    rake startdb
+    ```
+    ...Or direct postgres command
+    ```sh
+    pg_ctl start -D /path/to/my/dbserver
     ```
 
  1. Install dependencies
@@ -55,6 +64,11 @@ Requires:
     ```sh
     rails server
     ```
+
+Later, the database server can be stopped with another rake task:
+```sh
+rake stopdb
+```
 
 Now the server is running on [localhost:3000](http://localhost:3000)!
 
