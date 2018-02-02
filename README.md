@@ -52,6 +52,12 @@ Requires:
     ```sh
     pg_ctl start -D /path/to/my/dbserver
     ```
+    Later, the DB server can be stopped:
+    ```sh
+    rake stopdb
+    # or
+    pg_ctl stop -D /path/to/my/dbserver
+    ```
 
  1. Install dependencies
 
@@ -65,11 +71,6 @@ Requires:
     rails server
     ```
 
-Later, the database server can be stopped with another rake task:
-```sh
-rake stopdb
-```
-
 Now the server is running on [localhost:3000](http://localhost:3000)!
 
-Visit [localhost:3000/refinery](http://localhost:3000/refinery) to access the CMS.
+Visit [localhost:3000/refinery](http://localhost:3000/refinery) to access the CMS. 
