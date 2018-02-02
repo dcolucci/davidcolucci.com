@@ -38,6 +38,8 @@ canvas width = 800 - 18 * 2 = 764
 
   const canvas = document.getElementById('page-header__canvas');
   const ctx = canvas.getContext('2d');
+  ctx.lineWidth = 4;
+  ctx.strokeStyle = '#2A2A2A';
 
   let shouldDrawBacktrace = false;
   let lastX;
