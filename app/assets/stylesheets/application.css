@@ -16,15 +16,8 @@
  *= require_self
  */
 
- * {
-   box-sizing: border-box;
- }
-
-/*
- * refinery CMS adds this toolbar to the page in dev
- */
-#site_bar {
-  display: none;
+* {
+ box-sizing: border-box;
 }
 
 a {
@@ -35,4 +28,15 @@ a {
 
 a:hover {
   color: #d69f9c;
+}
+
+p {
+  line-height: 170%;
+}
+
+/*
+ * refinery CMS adds this toolbar to the page in dev
+ */
+#site_bar {
+  display: none;
 }
