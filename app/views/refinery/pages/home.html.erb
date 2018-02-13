@@ -27,7 +27,7 @@ canvas width = 800 - 18 * 2 = 764
 </section>
 <section class="page-body">
   <% @blog_posts.each do |post| %>
-    <p><%= post.title %></p>
+    <a href="<%= "/#{post.slug}" %>"><%= post.title %></a>
     <p><%= post.meta_description %></p>
   <% end %>
 </section>
