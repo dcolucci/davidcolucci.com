@@ -12,17 +12,17 @@ body {
   width: 100%;
 }
 
-.page-headline {
+.home-page__headline {
   font-size: 50px;
   margin-bottom: 30px;
   text-transform: uppercase;
 }
 
-.page-header {
+.home-page__header {
   position: relative;
 }
 
-.page-header__social {
+.home-page__header__social {
   display: flex;
   flex-direction: column;
   height: 150px;
@@ -36,11 +36,11 @@ body {
   }
 }
 
-#page-header__canvas {
+#home-page__header__canvas {
   border: 18px solid #2A2A2A;
 }
 
-.page-header__nav {
+.home-page__header__nav {
   display: flex;
   height: 50px;
   justify-content: flex-end;
@@ -49,4 +49,13 @@ body {
     line-height: 50px;
     margin-left: 15px;
   }
+}
+
+.home-page__river__headline {
+  display: inline-block;
+  font-weight: normal;
+}
+
+.home-page__river__dek {
+  margin: 10px 0;
 }
