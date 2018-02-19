@@ -7,18 +7,7 @@ canvas width = 800 - 18 * 2 = 764
 <h1 class="home-page__headline">David Colucci</h1>
 <section class="home-page__header">
   <canvas height="764" width="764" id="home-page__header__canvas"></canvas>
-  <aside class="home-page__header__social">
-    <a href="https://github.com/dcolucci" target="_blank">
-      <%= image_tag('GitHub-Mark-64px.png', size: '32', alt: 'David Colucci GitHub') %>
-    </a>
-    <a href="https://www.linkedin.com/in/david-colucci-26bb7673" target="_blank">
-      <!-- of course linkedin doesn't use a square -->
-      <%= image_tag('Linkedin.svg', size: '32', alt: 'David Colucci LinkedIn') %>
-    </a>
-    <a href="https://www.instagram.com/dac74" target="_blank">
-      <%= image_tag('IG.svg', size: '32', alt: 'David Colucci Instagram') %>
-    </a>
-  </aside>
+  <%= render partial: "social-follow", locals: { class_name: "home-page__header__social" } %>
   <nav class="home-page__header__nav">
     <a href="/about-me">About me</a>
     <span aria-hidden="true">//</span>
