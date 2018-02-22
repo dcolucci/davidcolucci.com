@@ -1,12 +1,12 @@
 <!--
 canvas size calculation:
-container width = 800
-canvas border = 18
-canvas width = 800 - 18 * 2 = 764
+container width = 700
+canvas border = 15
+canvas width = 700 - 15 * 2 = 670
 -->
 <h1 class="home-page__headline">David Colucci</h1>
 <section class="home-page__header">
-  <canvas height="764" width="764" id="home-page__header__canvas"></canvas>
+  <canvas height="670" width="670" id="home-page__header__canvas"></canvas>
   <%= render partial: "social-follow", locals: { class_name: "home-page__header__social" } %>
   <nav class="home-page__header__nav">
     <a href="/about-me">About me</a>
@@ -28,8 +28,8 @@ canvas width = 800 - 18 * 2 = 764
 </section>
 
 <script>
-  const CANVAS_BORDER_WIDTH = 18;
-  const CANVAS_SIZE = 764;
+  const CANVAS_BORDER_WIDTH = 15;
+  const CANVAS_SIZE = 670;
 
   const canvas = document.getElementById('home-page__header__canvas');
   const ctx = canvas.getContext('2d');
