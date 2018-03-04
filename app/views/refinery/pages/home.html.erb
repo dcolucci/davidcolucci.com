@@ -5,16 +5,16 @@ canvas border = 15
 canvas width = 700 - 15 * 2 = 670
 -->
 <h1 class="home-page__headline">David Colucci</h1>
-<section class="home-page__header">
+<section class="home-page__header <%= @should_render_canvas ? 'has-canvas' : '' %>">
   <% if @should_render_canvas then %>
     <canvas height="670" width="670" id="home-page__header__canvas"></canvas>
   <% end %>
-  <%= render partial: "social-follow", locals: { class_name: "home-page__header__social" } %>
   <nav class="home-page__header__nav">
     <a href="/about-me">About me</a>
     <span aria-hidden="true">//</span>
     <a href="https://s3.amazonaws.com/davidcolucci/DavidColucciResume.pdf" target="_blank">Experience</a>
   </nav>
+  <%= render partial: 'social-follow', locals: { class_name: 'home-page__header__social' } %>
 </section>
 <section class="home-page-body">
   <% @blog_posts.each do |post| %>
@@ -29,5 +29,5 @@ canvas width = 700 - 15 * 2 = 670
   <% end %>
 </section>
 <% if @should_render_canvas then %>
-  <%= javascript_include_tag "homepage-canvas" %>
+  <%= javascript_include_tag 'homepage-canvas' %>
 <% end %>

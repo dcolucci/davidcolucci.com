@@ -32,12 +32,17 @@ body {
 .home-page__header__social {
   display: flex;
   justify-content: space-between;
+  opacity: .75;
   width: 130px;
 
   a {
     display: block;
   }
+}
 
+// if the canvas is present we want to show the
+// social-follow component vertically next to it
+.has-canvas .home-page__header__social {
   @media (min-width: 1024px) {
     flex-direction: column;
     height: 150px;
