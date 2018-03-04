@@ -6,7 +6,9 @@ canvas width = 700 - 15 * 2 = 670
 -->
 <h1 class="home-page__headline">David Colucci</h1>
 <section class="home-page__header">
-  <canvas height="670" width="670" id="home-page__header__canvas"></canvas>
+  <% if @should_render_canvas then %>
+    <canvas height="670" width="670" id="home-page__header__canvas"></canvas>
+  <% end %>
   <%= render partial: "social-follow", locals: { class_name: "home-page__header__social" } %>
   <nav class="home-page__header__nav">
     <a href="/about-me">About me</a>
@@ -26,4 +28,6 @@ canvas width = 700 - 15 * 2 = 670
     <p class="home-page__river__dek"><%= post.meta_description %></p>
   <% end %>
 </section>
-<%= javascript_include_tag "homepage-canvas" %>
+<% if @should_render_canvas then %>
+  <%= javascript_include_tag "homepage-canvas" %>
+<% end %>
