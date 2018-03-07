@@ -9,3 +9,10 @@
   margin: 50px 0 15px;
   width: 90px;
 }
+
+// for lack of a better option for image control at the moment
+// we simply target all paragraph images and contain them
+p > img {
+  height: auto;
+  width: 100%;
+}
