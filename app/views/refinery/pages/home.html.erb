@@ -5,6 +5,12 @@ canvas border = 15
 canvas width = 700 - 15 * 2 = 670
 -->
 <h1 class="home-page__headline">David Colucci</h1>
+<section>
+  <%= render_content_page(@page, {
+      :hide_sections => :body_content_title,
+      :can_use_fallback => true
+    }) %>
+</section>
 <section class="home-page__header <%= @should_render_canvas ? 'has-canvas' : '' %>">
   <% if @should_render_canvas then %>
     <canvas height="670" width="670" id="home-page__header__canvas"></canvas>
@@ -16,7 +22,7 @@ canvas width = 700 - 15 * 2 = 670
   </nav>
   <%= render partial: 'social-follow', locals: { class_name: 'home-page__header__social' } %>
 </section>
-<section class="home-page-body">
+<section>
   <% @blog_posts.each do |post| %>
     <div class="header__divider"></div>
     <div class="header__pubdate">
