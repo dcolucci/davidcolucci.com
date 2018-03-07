@@ -4,12 +4,8 @@ container width = 700
 canvas border = 15
 canvas width = 700 - 15 * 2 = 670
 -->
-<h1 class="home-page__headline">David Colucci</h1>
 <section>
-  <%= render_content_page(@page, {
-      :hide_sections => :body_content_title,
-      :can_use_fallback => true
-    }) %>
+  <%= render '/refinery/content_page' %>
 </section>
 <section class="home-page__header <%= @should_render_canvas ? 'has-canvas' : '' %>">
   <% if @should_render_canvas then %>

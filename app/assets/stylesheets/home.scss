@@ -1,82 +1,76 @@
-body {
-  color: #2A2A2A;
-  display: flex;
-  font-family: Helvetica;
-  justify-content: center;
-  letter-spacing: 1px;
-}
+.template-home {
+  #body_content_title {
+    font-size: 35px;
+    margin: 30px 0;
+    text-transform: uppercase;
 
-.home-page__headline {
-  font-size: 35px;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-
-  @media (min-width: 1024px) {
-    font-size: 50px;
-  }
-}
-
-.home-page__header {
-  position: relative;
-}
-
-#home-page__header__canvas {
-  border: 15px solid #2A2A2A;
-  display: none;
-
-  @media screen and (min-width: 1024px) {
-    display: block;
-  }
-}
-
-.home-page__header__social {
-  display: flex;
-  justify-content: space-between;
-  opacity: .75;
-  width: 130px;
-
-  a {
-    display: block;
-  }
-}
-
-// if the canvas is present we want to show the
-// social-follow component vertically next to it
-.has-canvas .home-page__header__social {
-  @media (min-width: 1024px) {
-    flex-direction: column;
-    height: 150px;
-    position: absolute;
-    right: -50px;
-    top: 0;
-    width: initial;
-  }
-}
-
-.home-page__header__nav {
-  display: flex;
-  height: 50px;
-
-  * {
-    line-height: 50px;
-    margin: 0 15px 0 0;
-  }
-
-  @media (min-width: 1024px) {
-    justify-content: flex-end;
-
-    * {
-      margin: 0 0 0 15px;
+    @media (min-width: 1024px) {
+      font-size: 50px;
     }
   }
-}
 
-.home-page__river__headline {
-  display: inline-block;
-  font-size: 20px;
-  font-weight: normal;
-}
+  .home-page__header {
+    position: relative;
+  }
 
-.home-page__river__dek {
-  margin: 10px 0;
+  #home-page__header__canvas {
+    border: 15px solid #2A2A2A;
+    display: none;
+
+    @media screen and (min-width: 1024px) {
+      display: block;
+    }
+  }
+
+  .home-page__header__social {
+    display: flex;
+    justify-content: space-between;
+    opacity: .75;
+    width: 130px;
+
+    a {
+      display: block;
+    }
+  }
+
+  // if the canvas is present we want to show the
+  // social-follow component vertically next to it
+  .has-canvas .home-page__header__social {
+    @media (min-width: 1024px) {
+      flex-direction: column;
+      height: 150px;
+      position: absolute;
+      right: -50px;
+      top: 0;
+      width: initial;
+    }
+  }
+
+  .home-page__header__nav {
+    display: flex;
+    height: 50px;
+
+    * {
+      line-height: 50px;
+      margin: 0 15px 0 0;
+    }
+
+    @media (min-width: 1024px) {
+      justify-content: flex-end;
+
+      * {
+        margin: 0 0 0 15px;
+      }
+    }
+  }
+
+  .home-page__river__headline {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  .home-page__river__dek {
+    margin: 10px 0;
+  }
 }

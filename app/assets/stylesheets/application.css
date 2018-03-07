@@ -15,40 +15,4 @@
  *= require refinery/theme
  *= require_self
  */
-
-* {
- box-sizing: border-box;
-}
-
-a {
-  color: #9a1109;
-  text-decoration: none;
-  transition: color .2s ease-out;
-}
-
-a:hover {
-  color: #d69f9c;
-}
-
-footer {
-  color: #767676;
-  font-size: 12px;
-  margin-top: 40px;
-}
-
-p {
-  line-height: 170%;
-}
-
-#page_container {
-  margin: 20px;
-  max-width: 700px;
-  width: 100%;
-}
-
-/*
- * refinery CMS adds this toolbar to the page in dev
- */
-#site_bar {
-  display: none;
-}
+ 

@@ -1,0 +1,75 @@
+///
+/// HTML elements
+///
+
+* {
+ box-sizing: border-box;
+}
+
+a {
+  color: #9a1109;
+  text-decoration: none;
+  transition: color .2s ease-out;
+}
+
+a:hover {
+  color: #d69f9c;
+}
+
+body {
+  color: #2A2A2A;
+  display: flex;
+  font-family: Helvetica;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+footer {
+  color: #767676;
+  font-size: 12px;
+  margin-top: 40px;
+}
+
+p {
+  line-height: 170%;
+}
+
+// for lack of a better option for image control at the moment
+// we simply target all paragraph images and contain them
+p > img {
+  height: auto;
+  width: 100%;
+}
+
+
+///
+/// classes
+///
+
+.header__pubdate {
+  color: #767676;
+  font-size: 15px;
+}
+
+.header__divider {
+  background-color: #aaa;
+  height: 12px;
+  margin: 50px 0 15px;
+  width: 90px;
+}
+
+
+///
+/// IDs
+///
+
+#page_container {
+  margin: 20px;
+  max-width: 700px;
+  width: 100%;
+}
+
+// refinery CMS adds this toolbar to the page in dev
+#site_bar {
+  display: none;
+}
