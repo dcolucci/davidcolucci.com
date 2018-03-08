@@ -22,6 +22,7 @@ body {
   font-family: Helvetica;
   justify-content: center;
   letter-spacing: 1px;
+  margin: 0;
 }
 
 footer {
@@ -39,6 +40,12 @@ p {
 p > img {
   height: auto;
   width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 

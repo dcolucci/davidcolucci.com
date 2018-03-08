@@ -11,11 +11,11 @@ canvas width = 700 - 15 * 2 = 670
   <% if @should_render_canvas then %>
     <canvas height="670" width="670" id="home-page__header__canvas"></canvas>
   <% end %>
-  <nav class="home-page__header__nav">
-    <a href="/about-me">About me</a>
-    <span aria-hidden="true">//</span>
-    <a href="https://s3.amazonaws.com/davidcolucci/DavidColucciResume.pdf" target="_blank">Experience</a>
-  </nav>
+  <ul class="home-page__header__nav">
+    <li><a href="/about-me">About</a></li>
+    <li><a href="https://s3.amazonaws.com/davidcolucci/DavidColucciResume.pdf" target="_blank">Engineering Experience</a></li>
+    <li><a href="/">Photography</a></li>
+  </ul>
   <%= render partial: 'social-follow', locals: { class_name: 'home-page__header__social' } %>
 </section>
 <section>
