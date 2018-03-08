@@ -10,6 +10,18 @@
     }
   }
 
+  // we use the body for a rather specific purpose on
+  // the homepage (image and image caption only) so
+  // lock down their styles
+  #body {
+    p {
+      color: #767676;
+      display: inline-block;
+      font-size: 13px;
+      margin: 0;
+    }
+  }
+
   .home-page__header {
     position: relative;
 
@@ -24,7 +36,7 @@
     font-size: 17px;
     height: 110px;
     justify-content: space-around;
-    margin: 20px 0;
+    margin: 10px 0 20px;
   }
 
   .home-page__header__social {
