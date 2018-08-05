@@ -21,7 +21,7 @@ canvas width = 700 - 15 * 2 = 670
   <% @blog_posts.each do |post| %>
     <div class="header__divider"></div>
     <div class="header__pubdate">
-      <%= time_tag post.updated_at.to_date %>
+      <%= time_tag post.created_at.to_date %>
     </div>
     <a href="<%= "/#{post.slug}" %>">
       <h3 class="home-page__river__headline"><%= post.title %></h3>

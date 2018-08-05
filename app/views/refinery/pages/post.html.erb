@@ -1,5 +1,5 @@
 <a href="/">davidcolucci.com</a>
 <div class="header__divider"></div>
-<%= time_tag @page.updated_at.to_date, class: 'header__pubdate' %>
+<%= time_tag @page.created_at.to_date, class: 'header__pubdate' %>
 <%= render '/refinery/content_page' %>
 <a href="/">home</a>
