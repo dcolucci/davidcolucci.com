@@ -11,13 +11,6 @@ Requires:
 
 ### Setup
 
- 1. Create the `davidcoluccicom` role on the database server
-
-    ```
-    # don't forget the semicolon ;)
-    postgres=# CREATE ROLE davidcoluccicom LOGIN CREATEDB;
-    ```
-
  1. Make sure you're running the right ruby version
 
     ```sh
@@ -34,6 +27,13 @@ Requires:
 
     ```sh
     $ rake startdb
+    ```
+
+1. Create the `davidcoluccicom` role on the database server
+
+    ```
+    # don't forget the semicolon ;)
+    postgres=# CREATE ROLE davidcoluccicom LOGIN CREATEDB;
     ```
 
  1. Set up the database
@@ -131,3 +131,6 @@ We want to kill the `puma` process (that's the HTTP server rails uses under the 
 ```sh
 $ kill -9 1520
 ```
+
+## To Do
+ - [ ] check back in on RefineryCMS Rails 6 compatibility
