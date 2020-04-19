@@ -11,6 +11,13 @@ Requires:
 
 ### Setup
 
+ 1. Create the `davidcoluccicom` role on the database server
+
+    ```
+    # don't forget the semicolon ;)
+    postgres=# CREATE ROLE davidcoluccicom LOGIN CREATEDB;
+    ```
+
  1. Make sure you're running the right ruby version
 
     ```sh
