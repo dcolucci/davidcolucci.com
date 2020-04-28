@@ -134,3 +134,4 @@ $ kill -9 1520
 
 ## To Do
  - [ ] check back in on RefineryCMS Rails 6 compatibility
+ - [ ] investigate images breaking when running `bundle update`
