@@ -1,5 +1,25 @@
 <a href="/">davidcolucci.com</a>
+<% if @parent_page %>
+  <span>&nbsp;&gt;&nbsp;</span>
+  <a href="/<%= @parent_page.slug %>"><%= @parent_page.title %></a>
+<% end %>
 <div class="header__divider"></div>
 <%= time_tag @page.created_at.to_date, class: 'header__pubdate' %>
 <%= render '/refinery/content_page' %>
-<a href="/">home</a>
+<section>
+  <% @children.each do |post| %>
+    <div class="header__divider"></div>
+    <div class="header__pubdate">
+      <%= time_tag post.created_at.to_date %>
+    </div>
+    <a href="<%= @page.slug %>/<%= post.slug %>">
+      <h3 class="home-page__river__headline"><%= post.title %></h3>
+    </a>
+    <p class="home-page__river__dek"><%= post.meta_description %></p>
+  <% end %>
+</section>
+<a href="/">davidcolucci.com</a>
+<% if @parent_page %>
+  <span>&nbsp;&gt;&nbsp;</span>
+  <a href="/<%= @parent_page.slug %>"><%= @parent_page.title %></a>
+<% end %>
