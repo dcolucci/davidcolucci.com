@@ -6,8 +6,8 @@
 <div class="header__divider"></div>
 <%= time_tag @page.created_at.to_date, class: 'header__pubdate' %>
 <%= render '/refinery/content_page' %>
-<% if @children.size %>
-  <section>
+<% if @children.size > 0 %>
+  <section class="post__children">
     <% @children.each do |post| %>
       <div class="header__divider"></div>
       <div class="header__pubdate">
@@ -20,9 +20,7 @@
     <% end %>
   </section>
 <% end %>
-<div class="post__footer__link">
-  <a href="/">davidcolucci.com</a>
-</div>
+<a href="/">davidcolucci.com</a>
 <% if @parent_page %>
   <span>&nbsp;&gt;&nbsp;</span>
   <a href="/<%= @parent_page.slug %>"><%= @parent_page.title %></a>
