@@ -4,7 +4,7 @@ Refinery::PagesController.class_eval do
   before_action :render_children
 
   def find_all_blog_posts
-    @blog_posts = Refinery::Page.where(view_template: 'post').sort do |a,b|
+    @blog_posts = Refinery::Page.where(view_template: 'post', parent: nil).sort do |a,b|
       b.created_at.to_date <=> a.created_at.to_date
     end
   end
