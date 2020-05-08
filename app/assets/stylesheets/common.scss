@@ -35,6 +35,10 @@ p {
   line-height: 170%;
 }
 
+ol, ul {
+  line-height: 170%;
+}
+
 // for lack of a better option for image control at the moment
 // we simply target all paragraph images and contain them
 p > img {
