@@ -132,6 +132,17 @@ We want to kill the `puma` process (that's the HTTP server rails uses under the 
 $ kill -9 1520
 ```
 
+## Time mismatch
+
+Sometimes in the hosted Heroku environment the `created_at` timestamp of a post does not exactly match the Eastern Time date/time on which it was created. I've tried fixing this by adding a `TZ` env var to the Heroku stack, but the problem persists.
+
+I've corrected it by running update commands in the rails console on production. Yes. For example:
+
+```
+time_s = Refinery::Page.find(87).created_at; time_new = time_s - 60*60; Refinery::Page.find(87).update(created_at: time_new)
+```
+
 ## To Do
  - [ ] check back in on RefineryCMS Rails 6 compatibility
  - [ ] investigate images breaking when running `bundle update`
+ - [ ] investigate time mismatch on Heroku server
