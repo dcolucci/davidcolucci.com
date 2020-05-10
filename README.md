@@ -146,3 +146,4 @@ time_s = Refinery::Page.find(87).created_at; time_new = time_s - 60*60; Refinery
  - [ ] check back in on RefineryCMS Rails 6 compatibility
  - [ ] investigate images breaking when running `bundle update`
  - [ ] investigate time mismatch on Heroku server
+ - [ ] fix YouTube embeds mobile treatment
